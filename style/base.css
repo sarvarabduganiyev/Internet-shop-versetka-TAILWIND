@@ -30,5 +30,6 @@
   
           input[type="range"]::-ms-thumb {
             pointer-events: all;
+         
           }
           /* range style */

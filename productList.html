@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prodact List Grid Page</title>
+    <title>Prodact List Page</title>
     <link rel="stylesheet" href="./style/base.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -21,6 +21,7 @@
               custom__blue: "#33A0FF",
               card__one__color: "#e5e5e5",
               custom__white: "#F6F7F8",
+              custom__blue__cards: "#ebf3ff",
               card__two__color: "#f6f6f6",
               card__title__color: "#223263",
               gray__custom: "#9098B1",
@@ -29,6 +30,8 @@
               card__border: "#F6F7F8",
               dropDownLink: "#262626",
               gridBtnColor: "#F1F3F4",
+              select__border: " #f1f3f4",
+              paginatorBg: "#FAFAFB",
             },
           },
           screens: {
@@ -42,12 +45,14 @@
             800: "800px",
             900: "900px",
             1000: "1000px",
+            1031: "1031",
             1100: "1100px",
             1200: "1200px",
             1300: "1300px",
           },
           gridTemplateColumns: {
             grid__prosent: "25%,calc(75% - 30px)",
+            grid__full: "100%",
           },
         },
       };
@@ -148,6 +153,53 @@
         .home__btn:hover .dropdown-content {
           display: block;
           position: relative;
+        }
+        .selectParent select {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background: transparent url("./img/arrowSelect.png") no-repeat 60px;
+          background-position: 100px;
+        }
+        .grid__box {
+          grid-template-columns: 25% calc(75% - 30px);
+        }
+        @media (max-width: 900px) {
+          .grid__box {
+            grid-template-columns: 100%;
+          }
+        }
+        .grid__3 {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .paginator__active {
+          background-color: #40bfff;
+          color: white;
+        }
+        .footer__grid {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 170px;
+        }
+
+        @media (max-width: 900px) {
+          .footer__grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 1100px) {
+          .footer__grid {
+            gap: 50px;
+          }
+        }
+        @media (max-width: 1271px) {
+          .grid__3 {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 600px) {
+          .grid__3 {
+            grid-template-columns: repeat(1, 1fr);
+          }
         }
       }
     </style>
@@ -490,9 +542,7 @@
     </section>
     <section>
       <div class="container__size">
-        <div
-          class="pt-[51px] grid grid-cols-grid__prosent gap-[30px] items-start"
-        >
+        <div class="pt-[51px] grid grid__box gap-[30px] items-start">
           <div>
             <div class="p-[20px] bg-card__border">
               <h1>Hot Deals</h1>
@@ -684,14 +734,16 @@
             <div>
               <div class="bg-menu__active">
                 <div
-                  class="px-[50px] h-[290px] flex justify-between items-center"
+                  class="600:px-[50px] px-[20px] h-[290px] flex 900:flex-row flex-col justify-center 1000:justify-between items-center"
                 >
                   <div class="text-white">
-                    <h1 class="poppins text-[25px] font-medium">
+                    <h1
+                      class="poppins 400:text-[25px] text-[20px] 1000:text-start text-center font-medium"
+                    >
                       Adidas Men Running Sneakers
                     </h1>
                     <h3
-                      class="poppins text-[14px] mt-[10px] 1000:text-start text-center"
+                      class="poppins 400:text-[14px] text-[12px] mt-[10px] 1000:text-start text-center"
                     >
                       Performance and design. Taken right to the edge.
                     </h3>
@@ -708,41 +760,438 @@
                       ></span>
                     </div>
                   </div>
-                  <div class="-translate-y-8 w-[450px]">
+                  <div class="-translate-y-8 1000:block hidden w-[450px]">
                     <img src="./img/shoes__banner.png" alt="asdasdas" />
                   </div>
                 </div>
               </div>
               <div>
-                <div>
-                  <h1>13 Items</h1>
-                  <h1>Sort By</h1>
-                  <select>
-                    <option value="">Name</option>
-                    <option value="">asdasdasd</option>
-                    <option value="">asdasdasd</option>
-                    <option value="">asdasdasd</option>
-                  </select>
-                  <h1>Show</h1>
-                  <select>
-                    <option value="">12</option>
-                    <option value="">asdasdasd</option>
-                    <option value="">asdasdasd</option>
-                    <option value="">asdasdasd</option>
-                  </select>
-                  <div>
-                    <div class="grid grid-cols-3 gap-[4px] bg-gridBtnColor">
-                      <div class="w-[4px] h-[4px] bg-menu__active"></div>
-                      <div class="w-[4px] h-[4px] bg-menu__active"></div>
-                      <div class="w-[4px] h-[4px] bg-menu__active"></div>
-                      <div class="w-[4px] h-[4px] bg-menu__active"></div>
-                      <div class="w-[4px] h-[4px] bg-menu__active"></div>
-                      <div class="w-[4px] h-[4px] bg-menu__active"></div>
-                      <div class="w-[4px] h-[4px] bg-menu__active"></div>
-                      <div class="w-[4px] h-[4px] bg-menu__active"></div>
-                      <div class="w-[4px] h-[4px] bg-menu__active"></div>
+                <div
+                  class="hidden 700:flex items-center mt-[23px] justify-between pl-[22px] bg-custom__white"
+                >
+                  <div class="flex items-center">
+                    <h1
+                      class="proxima text-[14px] 1100:block hidden 1200:text-[16px] text-custom__back"
+                    >
+                      13 Items
+                    </h1>
+                    <h1
+                      class="proxima text-[14px] 1200:text-[16px] 1100:ml-[20px] ml-[0px] 1200:ml-[47px] text-custom__back"
+                    >
+                      SortBy
+                    </h1>
+                    <div class="selectParent py-[8px] px-[10px] 1000:px-[20px]">
+                      <select
+                        class="proxima text-[14px] 1200:text-[16px] text-custom__back rounded-[7px] border-2 border-select__border w-[126px] outline-none py-[8px] px-[15px]"
+                      >
+                        <option
+                          class="proxima text-[14px] 1200:text-[16px] text-custom__back"
+                          value="1"
+                        >
+                          Option 1
+                        </option>
+                        <option
+                          class="proxima text-[14px] 1200:text-[16px] text-custom__back"
+                          value="2"
+                        >
+                          Option 2
+                        </option>
+                      </select>
+                    </div>
+                    <h1
+                      class="ml-[10px] 1200:ml-[58px] proxima text-[14px] 1200:text-[16px] text-custom__back"
+                    >
+                      Show
+                    </h1>
+                    <div class="selectParent py-[8px] px-[20px]">
+                      <select
+                        class="proxima text-[14px] 1200:text-[16px] text-custom__back rounded-[7px] border-2 border-select__border w-[126px] outline-none py-[8px] px-[10px] 1000:px-[15px]"
+                      >
+                        <option
+                          class="proxima text-[14px] 1200:text-[16px] text-custom__back"
+                          value="1"
+                        >
+                          Option 1
+                        </option>
+                        <option
+                          class="proxima text-[14px] 1200:text-[16px] text-custom__back"
+                          value="2"
+                        >
+                          Option 2
+                        </option>
+                      </select>
                     </div>
                   </div>
+                  <div class="flex items-center justify-between">
+                    <div class="cursor-pointer">
+                      <img src="./img/switch.png" alt="swich" />
+                    </div>
+                    <div class="cursor-pointer">
+                      <img src="./img/burgerPng.png" alt="burgerBtn" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-[26px]">
+                <div class="flex 600:flex-row flex-col">
+                  <div
+                    class="relative 1100:h-[250px] 600:h-[200px] 400:h-[400px] h-[250px] 1200:w-[550px] w-full 600:w-[720px]"
+                  >
+                    <img
+                      class="absolute w-full h-full"
+                      src="./img/card__image.png"
+                      alt="card__image"
+                    />
+                  </div>
+                  <div class="ml-[15px]">
+                    <div>
+                      <h1
+                        class="600:mt-[0px] mt-[10px] poppins font-medium text-custom__back text-[20px] 1200:text-[24px]"
+                      >
+                        Nike Airmax 270 React
+                      </h1>
+                    </div>
+                    <div class="flex items-center">
+                      <div class="flex items-center">
+                        <img src="./icon/star__yellow.svg" alt="star__yellow" />
+                        <img src="./icon/star__yellow.svg" alt="star__yellow" />
+                        <img src="./icon/star__yellow.svg" alt="star__yellow" />
+                        <img src="./icon/star__yellow.svg" alt="star__yellow" />
+                        <img src="./icon/star__black.svg" alt="star__black" />
+                      </div>
+                      <div>
+                        <h3
+                          class="text-data__cusmom__tag text-[14px] proxima ml-[16px]"
+                        >
+                          0 reviews
+                        </h3>
+                      </div>
+                      <div>
+                        <a
+                          href="#"
+                          class="ml-[13px] text-custom__blue 400:inline hidden text-[14px] proxima"
+                          >Submit a review</a
+                        >
+                      </div>
+                    </div>
+                    <div>
+                      <hr />
+                    </div>
+                    <div class="flex 1100:mt-[14px] mt-[5px]">
+                      <h1
+                        class="poppins text-menu__active text-[14px] 1100:text-[18px] font-bold"
+                      >
+                        $299.43
+                      </h1>
+                      <h1 class="ml-[13px]">
+                        <span
+                          class="line-through poppins tracking-normal text-[14px] text-gray__custom"
+                          >$534,33</span
+                        >
+                        <span
+                          class="poppins font-bold tracking-normal text-[14px] text-pink__custom ml-[5px]"
+                          >24% Off</span
+                        >
+                      </h1>
+                    </div>
+                    <div class="1100:mt-[15px] mt-[0px]">
+                      <p class="poppins text-[12px] 1100:text-[14px]">
+                        Nunc facilisis sagittis ullamcorper. Proin lectus ipsum,
+                        gravida et mattis vulputate, tristique ut lectus. Sed et
+                        lectus lorem nunc leifend laorevtr istique et congue.
+                        Vivamus adipiscin vulputate g nisl ut dolor ...
+                      </p>
+                    </div>
+                    <div class="flex mt-[15px] 1200:mt-[40px]">
+                      <div
+                        class="flex px-[20px] 1100:py-[15px] py-[15px] items-center bg-custom__blue__cards text-custom__blue w-[150px] rounded-[4px] flex justify-between items-center"
+                      >
+                        <img src="./icon/basket.svg" alt="basket" />
+                        <h3 class="proxima text-[14px]">Add To Card</h3>
+                      </div>
+                      <div
+                        class="ml-[16px] bg-custom__blue__cards w-[46px] rounded-[4px] flex justify-center items-center px-[15px] py-[5px] 1100:py-[16px]"
+                      >
+                        <img src="./icon/hearts.svg" alt="hearts" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pt-[30px] pb-[23px]">
+                  <hr />
+                </div>
+                <div class="flex 600:flex-row flex-col">
+                  <div
+                    class="relative 1100:h-[250px] 600:h-[200px] 400:h-[400px] h-[250px] 1200:w-[550px] w-full 600:w-[720px]"
+                  >
+                    <img
+                      class="absolute w-full h-full"
+                      src="./img/card__image.png"
+                      alt="card__image"
+                    />
+                  </div>
+                  <div class="ml-[15px]">
+                    <div>
+                      <h1
+                        class="600:mt-[0px] mt-[10px] poppins font-medium text-custom__back text-[20px] 1200:text-[24px]"
+                      >
+                        Nike Airmax 270 React
+                      </h1>
+                    </div>
+                    <div class="flex items-center">
+                      <div class="flex items-center">
+                        <img src="./icon/star__yellow.svg" alt="star__yellow" />
+                        <img src="./icon/star__yellow.svg" alt="star__yellow" />
+                        <img src="./icon/star__yellow.svg" alt="star__yellow" />
+                        <img src="./icon/star__yellow.svg" alt="star__yellow" />
+                        <img src="./icon/star__black.svg" alt="star__black" />
+                      </div>
+                      <div>
+                        <h3
+                          class="text-data__cusmom__tag text-[14px] proxima ml-[16px]"
+                        >
+                          0 reviews
+                        </h3>
+                      </div>
+                      <div>
+                        <a
+                          href="#"
+                          class="ml-[13px] text-custom__blue 400:inline hidden text-[14px] proxima"
+                          >Submit a review</a
+                        >
+                      </div>
+                    </div>
+                    <div>
+                      <hr />
+                    </div>
+                    <div class="flex 1100:mt-[14px] mt-[5px]">
+                      <h1
+                        class="poppins text-menu__active text-[14px] 1100:text-[18px] font-bold"
+                      >
+                        $299.43
+                      </h1>
+                      <h1 class="ml-[13px]">
+                        <span
+                          class="line-through poppins tracking-normal text-[14px] text-gray__custom"
+                          >$534,33</span
+                        >
+                        <span
+                          class="poppins font-bold tracking-normal text-[14px] text-pink__custom ml-[5px]"
+                          >24% Off</span
+                        >
+                      </h1>
+                    </div>
+                    <div class="1100:mt-[15px] mt-[0px]">
+                      <p class="poppins text-[12px] 1100:text-[14px]">
+                        Nunc facilisis sagittis ullamcorper. Proin lectus ipsum,
+                        gravida et mattis vulputate, tristique ut lectus. Sed et
+                        lectus lorem nunc leifend laorevtr istique et congue.
+                        Vivamus adipiscin vulputate g nisl ut dolor ...
+                      </p>
+                    </div>
+                    <div class="flex mt-[15px] 1200:mt-[40px]">
+                      <div
+                        class="flex px-[20px] 1100:py-[15px] py-[15px] items-center bg-custom__blue__cards text-custom__blue w-[150px] rounded-[4px] flex justify-between items-center"
+                      >
+                        <img src="./icon/basket.svg" alt="basket" />
+                        <h3 class="proxima text-[14px]">Add To Card</h3>
+                      </div>
+                      <div
+                        class="ml-[16px] bg-custom__blue__cards w-[46px] rounded-[4px] flex justify-center items-center px-[15px] py-[5px] 1100:py-[16px]"
+                      >
+                        <img src="./icon/hearts.svg" alt="hearts" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pt-[30px] pb-[23px]">
+                  <hr />
+                </div>
+                <div class="flex 600:flex-row flex-col">
+                  <div
+                    class="relative 1100:h-[250px] 600:h-[200px] 400:h-[400px] h-[250px] 1200:w-[550px] w-full 600:w-[720px]"
+                  >
+                    <img
+                      class="absolute w-full h-full"
+                      src="./img/card__image.png"
+                      alt="card__image"
+                    />
+                  </div>
+                  <div class="ml-[15px]">
+                    <div>
+                      <h1
+                        class="600:mt-[0px] mt-[10px] poppins font-medium text-custom__back text-[20px] 1200:text-[24px]"
+                      >
+                        Nike Airmax 270 React
+                      </h1>
+                    </div>
+                    <div class="flex items-center">
+                      <div class="flex items-center">
+                        <img src="./icon/star__yellow.svg" alt="star__yellow" />
+                        <img src="./icon/star__yellow.svg" alt="star__yellow" />
+                        <img src="./icon/star__yellow.svg" alt="star__yellow" />
+                        <img src="./icon/star__yellow.svg" alt="star__yellow" />
+                        <img src="./icon/star__black.svg" alt="star__black" />
+                      </div>
+                      <div>
+                        <h3
+                          class="text-data__cusmom__tag text-[14px] proxima ml-[16px]"
+                        >
+                          0 reviews
+                        </h3>
+                      </div>
+                      <div>
+                        <a
+                          href="#"
+                          class="ml-[13px] text-custom__blue 400:inline hidden text-[14px] proxima"
+                          >Submit a review</a
+                        >
+                      </div>
+                    </div>
+                    <div>
+                      <hr />
+                    </div>
+                    <div class="flex 1100:mt-[14px] mt-[5px]">
+                      <h1
+                        class="poppins text-menu__active text-[14px] 1100:text-[18px] font-bold"
+                      >
+                        $299.43
+                      </h1>
+                      <h1 class="ml-[13px]">
+                        <span
+                          class="line-through poppins tracking-normal text-[14px] text-gray__custom"
+                          >$534,33</span
+                        >
+                        <span
+                          class="poppins font-bold tracking-normal text-[14px] text-pink__custom ml-[5px]"
+                          >24% Off</span
+                        >
+                      </h1>
+                    </div>
+                    <div class="1100:mt-[15px] mt-[0px]">
+                      <p class="poppins text-[12px] 1100:text-[14px]">
+                        Nunc facilisis sagittis ullamcorper. Proin lectus ipsum,
+                        gravida et mattis vulputate, tristique ut lectus. Sed et
+                        lectus lorem nunc leifend laorevtr istique et congue.
+                        Vivamus adipiscin vulputate g nisl ut dolor ...
+                      </p>
+                    </div>
+                    <div class="flex mt-[15px] 1200:mt-[40px]">
+                      <div
+                        class="flex px-[20px] 1100:py-[15px] py-[15px] items-center bg-custom__blue__cards text-custom__blue w-[150px] rounded-[4px] flex justify-between items-center"
+                      >
+                        <img src="./icon/basket.svg" alt="basket" />
+                        <h3 class="proxima text-[14px]">Add To Card</h3>
+                      </div>
+                      <div
+                        class="ml-[16px] bg-custom__blue__cards w-[46px] rounded-[4px] flex justify-center items-center px-[15px] py-[5px] 1100:py-[16px]"
+                      >
+                        <img src="./icon/hearts.svg" alt="hearts" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pt-[30px] pb-[23px]">
+                  <hr />
+                </div>
+                <div class="flex 600:flex-row flex-col">
+                  <div
+                    class="relative 1100:h-[250px] 600:h-[200px] 400:h-[400px] h-[250px] 1200:w-[550px] w-full 600:w-[720px]"
+                  >
+                    <img
+                      class="absolute w-full h-full"
+                      src="./img/card__image.png"
+                      alt="card__image"
+                    />
+                  </div>
+                  <div class="ml-[15px]">
+                    <div>
+                      <h1
+                        class="600:mt-[0px] mt-[10px] poppins font-medium text-custom__back text-[20px] 1200:text-[24px]"
+                      >
+                        Nike Airmax 270 React
+                      </h1>
+                    </div>
+                    <div class="flex items-center">
+                      <div class="flex items-center">
+                        <img src="./icon/star__yellow.svg" alt="star__yellow" />
+                        <img src="./icon/star__yellow.svg" alt="star__yellow" />
+                        <img src="./icon/star__yellow.svg" alt="star__yellow" />
+                        <img src="./icon/star__yellow.svg" alt="star__yellow" />
+                        <img src="./icon/star__black.svg" alt="star__black" />
+                      </div>
+                      <div>
+                        <h3
+                          class="text-data__cusmom__tag text-[14px] proxima ml-[16px]"
+                        >
+                          0 reviews
+                        </h3>
+                      </div>
+                      <div>
+                        <a
+                          href="#"
+                          class="ml-[13px] text-custom__blue 400:inline hidden text-[14px] proxima"
+                          >Submit a review</a
+                        >
+                      </div>
+                    </div>
+                    <div>
+                      <hr />
+                    </div>
+                    <div class="flex 1100:mt-[14px] mt-[5px]">
+                      <h1
+                        class="poppins text-menu__active text-[14px] 1100:text-[18px] font-bold"
+                      >
+                        $299.43
+                      </h1>
+                      <h1 class="ml-[13px]">
+                        <span
+                          class="line-through poppins tracking-normal text-[14px] text-gray__custom"
+                          >$534,33</span
+                        >
+                        <span
+                          class="poppins font-bold tracking-normal text-[14px] text-pink__custom ml-[5px]"
+                          >24% Off</span
+                        >
+                      </h1>
+                    </div>
+                    <div class="1100:mt-[15px] mt-[0px]">
+                      <p class="poppins text-[12px] 1100:text-[14px]">
+                        Nunc facilisis sagittis ullamcorper. Proin lectus ipsum,
+                        gravida et mattis vulputate, tristique ut lectus. Sed et
+                        lectus lorem nunc leifend laorevtr istique et congue.
+                        Vivamus adipiscin vulputate g nisl ut dolor ...
+                      </p>
+                    </div>
+                    <div class="flex mt-[15px] 1200:mt-[40px]">
+                      <div
+                        class="flex px-[20px] 1100:py-[15px] py-[15px] items-center bg-custom__blue__cards text-custom__blue w-[150px] rounded-[4px] flex justify-between items-center"
+                      >
+                        <img src="./icon/basket.svg" alt="basket" />
+                        <h3 class="proxima text-[14px]">Add To Card</h3>
+                      </div>
+                      <div
+                        class="ml-[16px] bg-custom__blue__cards w-[46px] rounded-[4px] flex justify-center items-center px-[15px] py-[5px] 1100:py-[16px]"
+                      >
+                        <img src="./icon/hearts.svg" alt="hearts" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="flex justify-center bg-paginatorBg mt-[48px] items-center"
+                >
+                  <button
+                    class="px-[18px] py-[9px] paginator__active paginator"
+                  >
+                    1
+                  </button>
+                  <button class="px-[18px] py-[9px] paginator">2</button>
+                  <button class="px-[18px] py-[9px] paginator">3</button>
+                  <button class="px-[18px] py-[9px] paginator">4</button>
+                  <button class="px-[18px] py-[9px] paginator">5</button>
                 </div>
               </div>
             </div>
@@ -810,9 +1259,7 @@
             </div>
           </div>
           <div class="mt-[63px]">
-            <div
-              class="grid 900:grid-cols-4 grid-cols-2 600:grid-cols-3 1100:gap-[170px] gap-[50px]"
-            >
+            <div class="grid footer__grid">
               <div>
                 <h1 class="poppins text-[18px] text-custom__back">
                   Infomation

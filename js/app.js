@@ -1,4 +1,5 @@
 const callToActionBtns = document.querySelectorAll(".button-current");
+const paginator = document.querySelectorAll(".paginator");
 const menus = document.querySelector(".menus");
 const burgerBtn = document.querySelector(".burgerBtn");
 const body = document.querySelector("body");
@@ -8,6 +9,14 @@ callToActionBtns.forEach((btn, _, AllBtn) => {
     if (btn.classList.toggle("button__active"))
       AllBtn.forEach((btx) =>
         btx.classList.toggle("button__active", btx === btn)
+      );
+  };
+});
+paginator.forEach((btn, _, AllBtn) => {
+  btn.onclick = (e) => {
+    if (btn.classList.toggle("paginator__active"))
+      AllBtn.forEach((btx) =>
+        btx.classList.toggle("paginator__active", btx === btn)
       );
   };
 });
