@@ -4,11 +4,6 @@
     font-family: 'proxima';
     src: url("../font/FontsFree-Net-proxima_nova_reg-webfont.ttf") format("truetype");
 }
-/* t{
-    grid-template-columns: (30%, calc(70% - 30px));
-} */
-
-
         /* range style */
         input[type="range"][multiple] {
             display: block;
@@ -20,7 +15,6 @@
           input[type="range"][multiple] + input[type="range"][multiple] {
             margin-top: -1em;
           }
-  
           input[type="range"]::-webkit-slider-thumb {
             pointer-events: all;
           }
@@ -33,3 +27,37 @@
          
           }
           /* range style */
+    
+          .swiper-slide img {
+            object-fit: cover;
+          }
+          .swiper {
+            height: 230px;
+          }
+          .mySwiper {
+            height: 10%;
+            padding: 10px 0;
+          }
+    
+          .mySwiper .swiper-slide {
+            width: 100%;
+            border: 2px solid #E5E8EA;
+            border-radius: 8px; 
+                   }
+
+          .mySwiper .swiper-slide-thumb-active {
+            border: 2px solid #006CFF;
+          }
+          .swiper-pagination-bullet{
+            background: #F1F3F4;
+            border-radius: 2px;
+            width: 31px;
+            height: 3px !important;
+          }
+           .swiper-pagination-bullet-active{
+              background-color: blue;
+          }
+          /* .mySwiper3{ */
+            /* height: 1500px; */
+          /* } */
+    
