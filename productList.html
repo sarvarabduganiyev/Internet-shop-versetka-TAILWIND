@@ -15,44 +15,27 @@
               menu__active: "#40BFFF",
               inp__color: "#BCDDFE",
               data__cusmom__tag: "#C1C8CE",
-              dollor__color: "#FF4858",
-              icon__border: "#f0f4fa",
-              icon__color__red: "#FF6875",
               custom__blue: "#33A0FF",
-              card__one__color: "#e5e5e5",
               custom__white: "#F6F7F8",
               custom__blue__cards: "#ebf3ff",
-              card__two__color: "#f6f6f6",
-              card__title__color: "#223263",
               gray__custom: "#9098B1",
               pink__custom: "#FB7181",
               custom__back: "#22262A",
               card__border: "#F6F7F8",
               dropDownLink: "#262626",
-              gridBtnColor: "#F1F3F4",
               select__border: " #f1f3f4",
               paginatorBg: "#FAFAFB",
             },
           },
           screens: {
-            100: "100px",
-            200: "200px",
-            300: "300px",
             400: "400px",
-            500: "500px",
             600: "600px",
             700: "700px",
-            800: "800px",
             900: "900px",
             1000: "1000px",
             1031: "1031",
             1100: "1100px",
             1200: "1200px",
-            1300: "1300px",
-          },
-          gridTemplateColumns: {
-            grid__prosent: "25%,calc(75% - 30px)",
-            grid__full: "100%",
           },
         },
       };
@@ -99,23 +82,7 @@
         .poppins {
           font-family: "Poppins";
         }
-        .releway {
-          font-family: "Raleway";
-        }
-        .slider__style {
-          align-items: center;
-          background: linear-gradient(
-            180deg,
-            #000000 -73.06%,
-            rgba(0, 0, 0, 0) 100%
-          );
-          background-image: url("./img/slide__img.png");
-          background-size: cover;
-          background-position: center;
-        }
-        .slider__text {
-          padding-top: 200px;
-        }
+
         .card {
           background-image: url("./img/card__image.png");
           background-position: center;
@@ -169,9 +136,7 @@
             grid-template-columns: 100%;
           }
         }
-        .grid__3 {
-          grid-template-columns: repeat(3, 1fr);
-        }
+
         .paginator__active {
           background-color: #40bfff;
           color: white;
@@ -189,16 +154,6 @@
         @media (max-width: 1100px) {
           .footer__grid {
             gap: 50px;
-          }
-        }
-        @media (max-width: 1271px) {
-          .grid__3 {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-        @media (max-width: 600px) {
-          .grid__3 {
-            grid-template-columns: repeat(1, 1fr);
           }
         }
       }
@@ -239,7 +194,7 @@
       <!-- Start Header Prifle  -->
       <div class="text-justify hidden 700:flex items-center justify-between">
         <div class="flex py-[27px] items-center">
-          <div class="flex items-center">
+          <div class="flex cursor-pointer items-center">
             <h1>EN</h1>
             <svg
               class="ml-[5px] cursor-pointer"
@@ -255,7 +210,7 @@
               />
             </svg>
           </div>
-          <div class="flex items-center ml-[13px]">
+          <div class="flex cursor-pointer items-center ml-[13px]">
             <h1>USD</h1>
             <svg
               class="ml-[5px] cursor-pointer"
@@ -289,7 +244,7 @@
                 fill="#22262A"
               />
             </svg>
-            <h1 class="ml-[6px]">My Profile</h1>
+            <h1 class="ml-[6px] cursor-pointer">My Profile</h1>
           </div>
           <div class="flex items-center ml-[35px]">
             <svg

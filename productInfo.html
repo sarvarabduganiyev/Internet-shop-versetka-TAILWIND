@@ -19,45 +19,30 @@
               menu__active: "#40BFFF",
               inp__color: "#BCDDFE",
               data__cusmom__tag: "#C1C8CE",
-              dollor__color: "#FF4858",
               icon__border: "#f0f4fa",
-              icon__color__red: "#FF6875",
               custom__blue: "#33A0FF",
-              card__one__color: "#e5e5e5",
               custom__white: "#F6F7F8",
               custom__blue__cards: "#ebf3ff",
-              card__two__color: "#f6f6f6",
               card__title__color: "#223263",
               gray__custom: "#9098B1",
               pink__custom: "#FB7181",
               custom__back: "#22262A",
               card__border: "#F6F7F8",
               dropDownLink: "#262626",
-              gridBtnColor: "#F1F3F4",
               select__border: " #f1f3f4",
               paginatorBg: "#FAFAFB",
-              tab__active__color: "#2E90E5",
             },
           },
           screens: {
-            100: "100px",
-            200: "200px",
-            300: "300px",
             400: "400px",
             500: "500px",
             600: "600px",
             700: "700px",
-            800: "800px",
             900: "900px",
             1000: "1000px",
             1031: "1031",
             1100: "1100px",
             1200: "1200px",
-            1300: "1300px",
-          },
-          gridTemplateColumns: {
-            grid__prosent: "25%,calc(75% - 30px)",
-            grid__full: "100%",
           },
         },
       };
@@ -92,11 +77,6 @@
         .menus__active {
           left: 0;
         }
-        .button__active {
-          color: #40bfff;
-          text-decoration: underline;
-          border-bottom: 2px solid #40bfff;
-        }
 
         .proxima {
           font-family: "proxima";
@@ -104,23 +84,7 @@
         .poppins {
           font-family: "Poppins";
         }
-        .releway {
-          font-family: "Raleway";
-        }
-        .slider__style {
-          align-items: center;
-          background: linear-gradient(
-            180deg,
-            #000000 -73.06%,
-            rgba(0, 0, 0, 0) 100%
-          );
-          background-image: url("./img/slide__img.png");
-          background-size: cover;
-          background-position: center;
-        }
-        .slider__text {
-          padding-top: 200px;
-        }
+
         .card {
           background-image: url("./img/card__image.png");
           background-position: center;
@@ -166,9 +130,7 @@
           background: transparent url("./img/arrowSelect.png") no-repeat 60px;
           background-position: 100px;
         }
-        .grid__box {
-          grid-template-columns: 25% calc(75% - 30px);
-        }
+
         .grid__box__reverse {
           grid-template-columns: calc(75% - 30px) 25%;
         }
@@ -179,10 +141,11 @@
           .card__grid {
             grid-template-columns: repeat(2, 1fr) !important;
           }
+          .grid__box__reverse {
+            grid-template-columns: 100%;
+          }
         }
-        .grid__3 {
-          grid-template-columns: repeat(3, 1fr);
-        }
+
         .paginator__active {
           background-color: #40bfff;
           color: white;
@@ -198,7 +161,8 @@
           .footer__grid {
             grid-template-columns: repeat(2, 1fr);
           }
-          .grid__box {
+
+          .swiper__grid {
             grid-template-columns: 100%;
           }
         }
@@ -212,15 +176,8 @@
             grid-template-columns: repeat(3, 1fr);
           }
         }
-        @media (max-width: 1271px) {
-          .grid__3 {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
+
         @media (max-width: 600px) {
-          .grid__3 {
-            grid-template-columns: repeat(1, 1fr);
-          }
           .card__grid {
             grid-template-columns: repeat(1, 1fr) !important;
           }
@@ -281,7 +238,7 @@
       <!-- Start Header Prifle  -->
       <div class="text-justify hidden 700:flex items-center justify-between">
         <div class="flex py-[27px] items-center">
-          <div class="flex items-center">
+          <div class="flex cursor-pointer items-center">
             <h1>EN</h1>
             <svg
               class="ml-[5px] cursor-pointer"
@@ -297,7 +254,7 @@
               />
             </svg>
           </div>
-          <div class="flex items-center ml-[13px]">
+          <div class="flex cursor-pointer items-center ml-[13px]">
             <h1>USD</h1>
             <svg
               class="ml-[5px] cursor-pointer"
@@ -331,7 +288,7 @@
                 fill="#22262A"
               />
             </svg>
-            <h1 class="ml-[6px]">My Profile</h1>
+            <h1 class="ml-[6px] cursor-pointer">My Profile</h1>
           </div>
           <div class="flex items-center ml-[35px]">
             <svg
@@ -575,13 +532,19 @@
       <div>
         <div class="mt-[40px] bg-custom__white py-[14px]">
           <h1 class="text-center">
-            <a class="text-custom__blue proxima text-[18px]" href="#">Home</a>
+            <a
+              class="text-custom__blue proxima 500:text-[18px] text-[14px]"
+              href="#"
+              >Home</a
+            >
             <span class="text-data__cusmom__tag tetx-[14px] proxima">/</span>
-            <a class="text-custom__blue proxima text-[18px]" href="#"
+            <a
+              class="text-custom__blue proxima 500:text-[18px] text-[14px]"
+              href="#"
               >Hot Deal</a
             >
             <span class="text-data__cusmom__tag tetx-[14px] proxima">/</span>
-            <a class="proxima text-[18px] dropDownLink" href="#"
+            <a class="proxima 500:text-[18px] text-[14px] dropDownLink" href="#"
               >Nike Airmax 270 React</a
             >
           </h1>
@@ -648,7 +611,10 @@
                     </div>
                   </div>
                 </div>
-                <div thumbsSlider="" class="swiper mySwiper mt-[100px]">
+                <div
+                  thumbsSlider=""
+                  class="swiper mySwiper mt-[30px] 900:mt-[100px]"
+                >
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
                       <img
@@ -810,23 +776,33 @@
                     <div class="mt-[22px]">
                       <hr />
                     </div>
-                    <div class="flex mt-[15px] items-center justify-between">
+                    <div
+                      class="flex 600:flex-row flex-col mt-[15px] items-center justify-between"
+                    >
                       <div
                         class="flex px-[20px] 1100:py-[15px] py-[15px] items-center bg-custom__blue__cards w-[120px] rounded-[4px] flex justify-between items-center"
                       >
-                        <img src="./icon/minus.svg" alt="minus" />
+                        <img
+                          class="cursor-pointer"
+                          src="./icon/minus.svg"
+                          alt="minus"
+                        />
                         <h3 class="proxima text-[16px] text-dropDownLink">5</h3>
-                        <img src="./icon/plus.svg" alt="plus" />
+                        <img
+                          class="cursor-pointer"
+                          src="./icon/plus.svg"
+                          alt="plus"
+                        />
                       </div>
-                      <div class="flex">
+                      <div class="mt-[30px] flex 600:mt-[0px]">
                         <div
-                          class="flex px-[20px] 1100:py-[15px] py-[15px] items-center bg-custom__blue__cards text-custom__blue w-[150px] rounded-[4px] flex justify-between items-center"
+                          class="flex px-[20px] cursor-pointer 1100:py-[15px] py-[15px] items-center bg-custom__blue__cards text-custom__blue w-[150px] rounded-[4px] flex justify-between items-center"
                         >
                           <img src="./icon/basket.svg" alt="basket" />
                           <h3 class="proxima text-[14px]">Add To Card</h3>
                         </div>
                         <div
-                          class="ml-[16px] bg-custom__blue__cards w-[46px] rounded-[4px] flex justify-center items-center px-[15px] py-[5px] 1100:py-[16px]"
+                          class="ml-[16px] cursor-pointer bg-custom__blue__cards w-[46px] rounded-[4px] flex justify-center items-center px-[15px] py-[5px] 1100:py-[16px]"
                         >
                           <img src="./icon/hearts.svg" alt="hearts" />
                         </div>
@@ -836,26 +812,28 @@
                 </div>
               </div>
             </div>
-            <div class="bg-paginatorBg mt-[48px] rounded-[5px]">
-              <div class="tab">
+            <div
+              class="bg-paginatorBg 400:block hidden mt-[48px] rounded-[5px]"
+            >
+              <div class="tab 700:block flex justify-between items-center">
                 <button
-                  class="tablinks poppins text-[18px] text-dropDownLink color cursor-pointer px-[16px] py-[14px] float-left active"
+                  class="tablinks poppins 600:text-[18px] 500:text-[13px] text-[11px] text-dropDownLink color cursor-pointer px-[16px] py-[14px] float-left active"
                   onclick="openCity(event, 'London')"
                 >
                   Product Infomation
                 </button>
                 <button
-                  class="tablinks poppins text-[18px] text-dropDownLink color cursor-pointer px-[16px] py-[14px] float-left"
+                  class="tablinks poppins 600:text-[18px] 500:text-[13px] text-[11px] text-dropDownLink color cursor-pointer px-[16px] py-[14px] float-left"
                   onclick="openCity(event, 'Paris')"
                 >
                   Reviews
                   <span
-                    class="opacity-25 text-[16px] proxima text-dropDownLink text"
+                    class="opacity-25 600:text-[16px] 500:text-[13px] text-[11px] proxima text-dropDownLink text"
                     >0</span
                   >
                 </button>
                 <button
-                  class="tablinks poppins text-[18px] text-dropDownLink color cursor-pointer px-[16px] py-[14px] float-left"
+                  class="tablinks poppins 600:text-[18px] 500:text-[13px] text-[11px] text-dropDownLink color cursor-pointer px-[16px] py-[14px] float-left"
                   onclick="openCity(event, 'Tokyo')"
                 >
                   Another tab
@@ -943,8 +921,8 @@
           </div>
           <div>
             <!-- 25% -->
-            <div class="swiper mySwiper3 wrappers">
-              <div class="swiper-wrapper ">
+            <div class="swiper mySwiper3">
+              <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
                 </div>
@@ -955,8 +933,8 @@
                   <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
                 </div>
               </div>
-              <div class="swiper-pagination paginator__swiper"></div>
             </div>
+            <div class="swiper-pagination paginator__swiper"></div>
           </div>
         </div>
       </div>
@@ -965,11 +943,11 @@
       <div class="container__size">
         <div>
           <h1
-            class="font-semibold poppins text-custom__back mt-[77px] text-center text-[35px]"
+            class="font-semibold poppins text-custom__back mt-[77px] text-center text-[20px] 600:text-[35px]"
           >
             RELATED PRODUCTS
           </h1>
-          <div class="grid card__grid gap-[34px] mt-[83px]">
+          <div class="grid card__grid gap-[34px] mt-[30px] 600:mt-[83px]">
             <div class="border-2 border-card__border rounded-[5px]">
               <div
                 class="card 600:h-[200px] h-[250px] 500:h-[350px] p-[20px] bg-cover cursor-pointer"
@@ -991,7 +969,7 @@
               </div>
               <div>
                 <h1
-                  class="font-bold text-center poppins text-[18px] text-card__title__color mt-[9px]"
+                  class="font-bold cursor-pointer text-center poppins text-[18px] text-card__title__color mt-[9px]"
                 >
                   Nike Air Max 270 React
                 </h1>
@@ -1060,7 +1038,7 @@
               </div>
               <div>
                 <h1
-                  class="font-bold text-center poppins text-[18px] text-card__title__color mt-[9px]"
+                  class="font-bold cursor-pointer text-center poppins text-[18px] text-card__title__color mt-[9px]"
                 >
                   Nike Air Max 270 React
                 </h1>
@@ -1129,7 +1107,7 @@
               </div>
               <div>
                 <h1
-                  class="font-bold text-center poppins text-[18px] text-card__title__color mt-[9px]"
+                  class="font-bold cursor-pointer text-center poppins text-[18px] text-card__title__color mt-[9px]"
                 >
                   Nike Air Max 270 React
                 </h1>
@@ -1198,7 +1176,7 @@
               </div>
               <div>
                 <h1
-                  class="font-bold text-center poppins text-[18px] text-card__title__color mt-[9px]"
+                  class="font-bold cursor-pointer text-center poppins text-[18px] text-card__title__color mt-[9px]"
                 >
                   Nike Air Max 270 React
                 </h1>
@@ -1470,10 +1448,6 @@
       });
       var swiper = new Swiper(".mySwiper3", {
         loop: true,
-        spaceBetween: 10,
-        thumbs: {
-          swiper: swiper,
-        },
         pagination: {
           el: ".swiper-pagination",
         },
