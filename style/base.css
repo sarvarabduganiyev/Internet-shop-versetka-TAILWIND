@@ -1,89 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap");
 @font-face {
-    font-family: 'proxima';
-    src: url("../font/FontsFree-Net-proxima_nova_reg-webfont.ttf") format("truetype");
+  font-family: "proxima";
+  src: url("../font/FontsFree-Net-proxima_nova_reg-webfont.ttf")
+    format("truetype");
 }
-        /* range style */
-        input[type="range"][multiple] {
-            display: block;
-            height: 1em;
-            margin: 0;
-            pointer-events: none;
-            background-color: red;
-          }
-          input[type="range"][multiple] + input[type="range"][multiple] {
-            margin-top: -1em;
-          }
-          input[type="range"]::-webkit-slider-thumb {
-            pointer-events: all;
-          }
-          */ input[type="range"]::-moz-range-thumb {
-            pointer-events: all;
-          }
-  
-          input[type="range"]::-ms-thumb {
-            pointer-events: all;
-         
-          }
-          /* range style */
-          .swiper {
-            height: 230px;
-          }
-          .mySwiper {
-            height: 10%;
-            padding: 10px 0;
-          }
-    
-          .mySwiper .swiper-slide {
-            width: 100%;
-            border: 2px solid #E5E8EA;
-            border-radius: 8px; 
-                   }
+/* range style */
+input[type="range"][multiple] {
+  display: block;
+  height: 1em;
+  margin: 0;
+  pointer-events: none;
+  background-color: red;
+}
+input[type="range"][multiple] + input[type="range"][multiple] {
+  margin-top: -1em;
+}
+input[type="range"]::-webkit-slider-thumb {
+  pointer-events: all;
+}
+*/ input[type="range"]::-moz-range-thumb {
+  pointer-events: all;
+}
 
-          .mySwiper .swiper-slide-thumb-active {
-            border: 2px solid #006CFF;
-          }
-          .swiper-pagination-bullet{
-            background: rebeccapurple;
-            /* background: #F1F3F4; */
-            /* margin-left: 900px !important; */
-            border-radius: 2px;
-            width: 31px;
-            height: 3px !important;
-            float: right;
+input[type="range"]::-ms-thumb {
+  pointer-events: all;
+}
+/* range style */
+.swiper {
+  height: 230px;
+}
+.mySwiper {
+  height: 10%;
+  padding: 10px 0;
+}
 
-       
-        
-          }
-          @media(max-width:1200px){
-            .swiper-pagination-bullet{
-              float: initial;
-            }
-            .paginator__swiper{
-              display:none;
-            }
-          }
-           .swiper-pagination-bullet-active{
-              background-color: blue;
-          }
-          /* */
-            /* bottom: -10% !important; */
-            /* display: flex !important; */
-            /* margin-right: 60px; */
-            /* left: -170px !important; */
-            /* justify-content: end !important; */
-          /* } */
-          /* .mySwiper3{ */
-            /* height: 1500px; */
-          /* } */
-          .paginator__swiper{
-            bottom: initial !important;
-            margin-top: 65px !important;
+.mySwiper .swiper-slide {
+  width: 100%;
+  border: 2px solid #e5e8ea;
+  border-radius: 8px;
+}
 
-    max-width: 1500px;
-    padding: 0px 175px;
-    margin: 0 auto;
+.mySwiper .swiper-slide-thumb-active {
+  border: 2px solid #006cff;
+}
+.swiper-pagination-bullet {
+  background: rebeccapurple;
+  /* background: #F1F3F4; */
+  /* margin-left: 900px !important; */
+  border-radius: 2px;
+  width: 31px;
+  height: 3px !important;
+  float: right;
+}
 
-           }
-    
+@media (max-width: 1200px) {
+  .swiper-pagination-bullet {
+    float: initial;
+  }
+  .paginator__swiper {
+    display: none;
+  }
+}
+.swiper-pagination-bullet-active {
+  background-color: blue;
+}
+/* */
+/* bottom: -10% !important; */
+/* display: flex !important; */
+/* margin-right: 60px; */
+/* left: -170px !important; */
+/* justify-content: end !important; */
+/* } */
+/* .mySwiper3{ */
+/* height: 1500px; */
+/* } */
+.paginator__swiper {
+  bottom: initial !important;
+  margin-top: 65px !important;
+
+  max-width: 1500px;
+  padding: 0px 175px;
+  margin: 0 auto;
+}
